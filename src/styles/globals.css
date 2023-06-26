@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+body {
+background-color: #0F0F0F;
+}
+.accountIcon{
+    font-size: 100px;
+}
