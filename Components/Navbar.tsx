@@ -49,7 +49,7 @@ const Navbar = () => {
                     </li>
 
                     <li   >
-                        <Link className={`px-7 ${activeLink === '/myGame' ? 'text-white ' : ''}`} href={'/myGame'}>My Game</Link>
+                        <Link className={`px-7 ${activeLink === '/myGame' ? 'text-white ' : ''}`} href={'/myGame'}>My  Game</Link>
                     </li>
                 
                     <li className="ml-10 mr-5">
