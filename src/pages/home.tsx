@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
+    <div className="py-5 px-4">
         
     </div>
   )
