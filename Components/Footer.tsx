@@ -2,8 +2,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
+<div className="w-full px-4 absolute bottom-3 mt-4">
+    <p className="text-center text-gray-500 text-sm">
+      &copy; 2023 Bloom Duck Company. All rights reserved.
+    </p>
+  </div>  )
 }
 
 export default Footer
