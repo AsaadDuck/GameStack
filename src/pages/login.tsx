@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+
+
+  const [cred, setCred] = useState({
+    username:"",
+    password:""
+  });
+
   return (
     <div>
         <form action="">
