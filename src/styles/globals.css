@@ -11,6 +11,8 @@
 
 body {
 background-color: #0F0F0F;
+color: aliceblue;
+font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .accountIcon{
     font-size: 100px;

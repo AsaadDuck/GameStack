@@ -7,7 +7,7 @@ interface Props {
 }
 const Layout = ({ children }: Props) => {
   return (
-    <div>
+    <div className='max-h-screen h-screen '>
         <Navbar   />
             {children}
         <Footer />  
