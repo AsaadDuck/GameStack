@@ -8,15 +8,22 @@ const Login = () => {
     password:""
   });
 
+  
+
   return (
-    <div>
-        <form action="">
+    <div className="m-auto flex justify-center ">
+        <form className="p-7 w-1/2  " action="">
 
-          <label htmlFor=""> UserName</label>
-          <input type="text" placeholder="Enter your username" />
-
+          <div className="">
+          <label className="" htmlFor=""> UserName</label>
+          <input className="block w-full text-center my-4 py-3 text-gray-300 border-[#0F0F0F]   rounded-xl bg-[#E43F5A]" type="text" placeholder="Enter your username" />
+          </div>
+      
+          <div className="">
           <label htmlFor=""> Password</label>
-          <input type="text" name="" id=""  placeholder= "Enter your Password"/>
+          <input className="block w-full text-center my-4 py-3 text-gray-300 border-[#0F0F0F]   rounded-xl bg-[#E43F5A]" type="text" name="" id=""  placeholder= "Enter your Password"/>
+          </div>
+       
 
         </form>
     </div>
