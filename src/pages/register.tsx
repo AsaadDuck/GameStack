@@ -4,11 +4,14 @@ const register = () => {
 
     const [register, setRegister] = useState({
         username:"",
+        name:"assad",
         email:"",
         password:""
     })
 
     const handleChange = (event:any) =>{
+        event.preventDefault();
+
         const {name, value} = event.target;
         setRegister({
             ...register,
@@ -17,9 +20,22 @@ const register = () => {
         console.log(register);
     }
 
-    const handleSubmit = (event:any) =>{
+    const handleSubmit = async (event:any) =>{
         event.preventDefault();
-
+        try{
+            const response = await fetch ('https://gamestack-production.up.railway.app/auth/user/register', {
+              method:'POST', 
+              headers: {
+                'Content-Type': 'application/json',
+                
+              },
+                body: JSON.stringify(register)
+            });
+            const data = await response.json();
+            console.log("data");
+          }catch(error){
+            console.error(error); 
+          }
     }
 
   return (
@@ -34,23 +50,27 @@ const register = () => {
         </div>
       <div className="">
       {/* <label className="" htmlFor=""> Username</label> */}
-      <input required onChange={handleChange} className=" border-white block w-full text-center my-6 py-3 text-gray-300 shadow  rounded bg-[#E43F5A] border-none outline-none" type="text" placeholder="Enter your username" />
+      <input required onChange={handleChange} className=" border-white block w-full text-center my-6 py-3 text-gray-300 shadow  rounded bg-[#E43F5A] border-none outline-none" type="text" name="username" placeholder="Enter your username" />
+      </div>
+
+      <div className="">
+      <input required onChange={handleChange} className=" border-white block w-full text-center my-6 py-3 text-gray-300 shadow  rounded bg-[#E43F5A] border-none outline-none" type="text" name="name" placeholder="Enter your name" />
       </div>
 
       <div className="">
       {/* <label htmlFor=""> Email</label> */}
-      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Enter your Email"/>
+      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="email" id=""  placeholder= "Enter your Email"/>
       </div>
 
       <div className="">
       {/* <label htmlFor=""> Password</label> */}
-      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Enter your Password"/>
+      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="password" name="password" id=""  placeholder= "Enter your Password"/>
       </div>
 
-      <div className="">
+      {/* <div className=""> */}
       {/* <label htmlFor="">Confirm Password</label> */}
-      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Confirm your Password"/>
-      </div>
+      {/* <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Confirm your Password"/>
+      </div> */}
 
    
 

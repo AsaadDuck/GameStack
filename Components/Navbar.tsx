@@ -26,7 +26,7 @@ const Navbar = () => {
 
     
   return (
-    <nav className="mx-1 mb-2 sticky top-0 z-10">
+    <nav className="mx-1 mb-2  top-0 z-10">
     <div className="mt-2 font-Belanosima rounded-xl bg-[#1E1E1E] text-[#E43F5A] max-w-screen flex flex-wrap items-center justify-between mx-auto p-4 text-2xl">
   
       <div className="text-6xl">

@@ -19,7 +19,11 @@ const Explore = () => {
 
     return (
         <div>
-            {data === undefined || data === null}? <h1>data is Loading</h1> :(
+            {data === undefined || data === null}? 
+                <div>   
+                    <h1 className="flex text-3xl ml-24">data is Loading .....</h1>
+                    
+                </div> :(
             {data.map((item) => <Card name={data}/>)}
 
             )
