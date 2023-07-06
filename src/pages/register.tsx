@@ -8,7 +8,7 @@ const register = () => {
         password:""
     })
 
-    const handleChange = (event) =>{
+    const handleChange = (event:any) =>{
         const {name, value} = event.target;
         setRegister({
             ...register,
