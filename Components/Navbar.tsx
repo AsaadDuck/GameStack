@@ -12,6 +12,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const Navbar = () => {
 
+    const [userId,setuserId] = useState('0')
     const [activeLink, setActiveLink] = useState('');
 
     useEffect(() => {

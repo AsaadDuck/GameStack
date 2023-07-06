@@ -29,12 +29,39 @@ const editGame = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission here
+    
+    // Create a new game object with the form data
+    const newGame = {
+      gameName,
+      metacriticScore,
+      playtime,
+      platforms
+    };
+    
+    console.log(newGame);
+    
+    // Make a POST request to the API to save the new game
+    // fetch('https://example.com/api/games', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(newGame)
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log('New game created:', data);
+    //   // Do something with the response data, such as redirecting to a new page
+    // })
+    // .catch(error => {
+    //   console.error('Error creating new game:', error);
+    //   // Handle the error, such as displaying an error message to the user
+    // });
   };
 
   return (
    <div>
- <form className="max-w-lg mx-auto px-4 py-8 shadow-lg rounded-lg">
+ <form  onSubmit={handleSubmit} className="max-w-lg mx-auto px-4 py-8 shadow-lg rounded-lg">
       <div className="mb-4">
         <label htmlFor="gameName" className="block  font-bold mb-2">Game Name:</label>
         <input type="text" id="gameName" value={gameName} onChange={handleGameNameChange} className="border-none outline-none block w-full border border-gray-400 p-2 rounded-lg bg-[#E43F5A]" />
