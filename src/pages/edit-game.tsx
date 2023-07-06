@@ -5,20 +5,23 @@ const editGame = () => {
   const [metacriticScore, setMetacriticScore] = useState('');
   const [playtime, setPlaytime] = useState('');
   const [platforms, setPlatforms] = useState([]);
+  const [genres,setGenres] = useState([]);
+  const [developers , setDevelopers] = useState([])
+  const [date,setDate]=useState('')
 
-  const handleGameNameChange = (event) => {
+  const handleGameNameChange = (event:any) => {
     setGameName(event.target.value);
   };
 
-  const handleMetacriticScoreChange = (event) => {
+  const handleMetacriticScoreChange = (event:any) => {
     setMetacriticScore(event.target.value);
   };
 
-  const handlePlaytimeChange = (event) => {
+  const handlePlaytimeChange = (event:any) => {
     setPlaytime(event.target.value);
   };
 
-  const handlePlatformsChange = (event) => {
+  const handlePlatformsChange = (event:any) => {
     const { checked, value } = event.target;
   if (checked) {
     setPlatforms(platforms.concat(value));
@@ -27,7 +30,7 @@ const editGame = () => {
   }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:any) => {
     event.preventDefault();
     
     // Create a new game object with the form data
@@ -64,15 +67,29 @@ const editGame = () => {
  <form  onSubmit={handleSubmit} className="max-w-lg mx-auto px-4 py-8 shadow-lg rounded-lg">
       <div className="mb-4">
         <label htmlFor="gameName" className="block  font-bold mb-2">Game Name:</label>
-        <input type="text" id="gameName" value={gameName} onChange={handleGameNameChange} className="border-none outline-none block w-full border border-gray-400 p-2 rounded-lg bg-[#E43F5A]" />
+        <input placeholder='Enter game name' type="text" id="gameName" value={gameName} onChange={handleGameNameChange} className="border-none outline-none block w-full border border-gray-400 p-2 rounded-lg bg-[#E43F5A]" />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="developers" className="block  font-bold mb-2">Developers:</label>
+        <input placeholder='name1,name2,name3....' type="text" id="developers" value={metacriticScore} onChange={handleMetacriticScoreChange} className="border-none outline-none block w-full border bg-[#E43F5A] border-gray-400 p-2 rounded-lg" />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="genres" className="block  font-bold mb-2">genres</label>
+        <input type="text" id="genres" value={metacriticScore} onChange={handleMetacriticScoreChange} className="border-none outline-none block w-full border bg-[#E43F5A] border-gray-400 p-2 rounded-lg" />
       </div>
       <div className="mb-4">
         <label htmlFor="metacriticScore" className="block  font-bold mb-2">Metacritic Score:</label>
         <input type="text" id="metacriticScore" value={metacriticScore} onChange={handleMetacriticScoreChange} className="border-none outline-none block w-full border bg-[#E43F5A] border-gray-400 p-2 rounded-lg" />
       </div>
+     
+     
       <div className="mb-4">
         <label htmlFor="playtime" className="block  font-bold mb-2">Playtime (hours):</label>
         <input type="number" id="playtime" value={playtime} onChange={handlePlaytimeChange} className="border-none outline-none block w-full border bg-[#E43F5A] border-gray-400 p-2 rounded-lg " />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="date" className="block  font-bold mb-2">release Date DD/MM/YYYY:</label>
+        <input type="number" id="date" value={playtime} onChange={handlePlaytimeChange} className="border-none outline-none block w-full border bg-[#E43F5A] border-gray-400 p-2 rounded-lg " />
       </div>
       <div className="mb-4">
         <label htmlFor="platforms" className="block  font-bold mb-2">Platforms:</label>
