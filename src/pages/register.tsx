@@ -8,21 +8,25 @@ const register = () => {
         password:""
     })
 
-    const handleChange = (event) =>{
+    const handleChange = (event:any) =>{
         const {name, value} = event.target;
         setRegister({
             ...register,
             [name]:value
         })
         console.log(register);
-        
+    }
+
+    const handleSubmit = (event:any) =>{
+        event.preventDefault();
+
     }
 
   return (
     <div className="m-auto flex justify-center md:w-3/4 lg:w-2/3 xl:w-2/3">
 
 
-    <form className="p-7 text-center  md:w-3/4 lg:w-2/3 xl:w-2/3" onSubmit={handleChange}>
+    <form className="p-7 text-center  md:w-3/4 lg:w-2/3 xl:w-2/3" onSubmit={handleSubmit}>
 
         <div className=" text-gray-400">
             <h1 className="text-6xl py-5">Hiii Gamer</h1>
@@ -30,22 +34,22 @@ const register = () => {
         </div>
       <div className="">
       {/* <label className="" htmlFor=""> Username</label> */}
-      <input required className=" border-white block w-full text-center my-6 py-3 text-gray-300 shadow  rounded bg-[#E43F5A] border-none outline-none" type="text" placeholder="Enter your username" />
+      <input required onChange={handleChange} className=" border-white block w-full text-center my-6 py-3 text-gray-300 shadow  rounded bg-[#E43F5A] border-none outline-none" type="text" placeholder="Enter your username" />
       </div>
 
       <div className="">
       {/* <label htmlFor=""> Email</label> */}
-      <input required className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Enter your Email"/>
+      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Enter your Email"/>
       </div>
 
       <div className="">
       {/* <label htmlFor=""> Password</label> */}
-      <input required className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Enter your Password"/>
+      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Enter your Password"/>
       </div>
 
       <div className="">
       {/* <label htmlFor="">Confirm Password</label> */}
-      <input required className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Confirm your Password"/>
+      <input required onChange={handleChange} className="block w-full text-center my-6 py-3 text-gray-300 border-[#0F0F0F]   rounded bg-[#E43F5A] border-none outline-none" type="text" name="" id=""  placeholder= "Confirm your Password"/>
       </div>
 
    

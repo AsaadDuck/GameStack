@@ -29,7 +29,7 @@ const Navbar = () => {
     <div className="mt-2 font-Belanosima rounded-xl bg-[#1E1E1E] text-[#E43F5A] max-w-screen flex flex-wrap items-center justify-between mx-auto p-4 text-2xl">
   
       <div className="text-6xl">
-        <Link href={''}> Logo</Link>
+        <Link href={'/'}> Logo</Link>
       </div>
   
       <div className="relative mt-3 w-full lg:w-1/3 items-center">

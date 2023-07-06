@@ -32,12 +32,13 @@ const Login = () => {
       const response = await fetch ('', {
         method:'POST', 
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          
         },
           body: JSON.stringify(cred)
       });
       const data = await response.json();
-      console.log(data);
+      console.log("data");
     }catch(error){
       console.error(error); 
     }
